@@ -1,200 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Youth Fellowship</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel Skill Sharing: Basic Elements of a Web Page</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
   <style>
-    :root{
-      --bg:#0b1220;
-      --card:#121a2b;
-      --text:#e9eefc;
-      --muted:#a9b4d0;
-      --accent:#6ea8fe;
-      --accent2:#7cf2c2;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 20% 10%, rgba(110,168,254,.25), transparent 60%),
-                  radial-gradient(1000px 500px at 90% 30%, rgba(124,242,194,.18), transparent 55%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.5;
-    }
-    .container{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 24px;
-    }
-    header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding: 12px 0 18px;
-    }
-    .logo{
-      display:flex; gap:10px; align-items:center;
-      font-weight:700;
-      letter-spacing:.3px;
-    }
-    .dot{
-      width:12px;height:12px;border-radius:999px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 20px rgba(110,168,254,.35);
-    }
-    nav a{
-      color:var(--muted);
-      text-decoration:none;
-      margin-left:14px;
-      font-size:14px;
-    }
-    nav a:hover{color:var(--text)}
-    .hero{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 18px;
-      align-items:stretch;
-      margin-top: 10px;
-    }
-    .card{
-      background: rgba(18,26,43,.85);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 16px;
-      padding: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
-      backdrop-filter: blur(8px);
-    }
-    h1{
-      margin: 4px 0 8px;
-      font-size: 34px;
-      line-height:1.15;
-    }
-    .subtitle{color:var(--muted); margin:0 0 14px}
-    .pill{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(110,168,254,.12);
-      border: 1px solid rgba(110,168,254,.25);
-      color: var(--text);
-      font-size: 13px;
-      width: fit-content;
-    }
-    .btns{display:flex; gap:10px; margin-top:14px; flex-wrap:wrap}
-    .btn{
-      padding:10px 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      text-decoration:none;
-      font-weight:600;
-      font-size:14px;
-    }
-    .btn.primary{
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      border: none;
-      color:#08111f;
-    }
-    .btn:hover{transform: translateY(-1px)}
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 14px;
-    }
-    .mini h3{margin: 0 0 6px; font-size: 16px}
-    .mini p{margin:0; color: var(--muted); font-size: 14px}
-    .verse{
-      border-left: 4px solid rgba(124,242,194,.8);
-      padding-left: 12px;
-      margin: 12px 0 0;
-      color: var(--muted);
-      font-style: italic;
-    }
-    footer{
-      margin: 22px 0 8px;
-      color: rgba(169,180,208,.8);
-      font-size: 13px;
-      text-align:center;
-    }
-    /* Responsive */
-    @media (max-width: 860px){
-      .hero{grid-template-columns: 1fr}
-      .grid{grid-template-columns: 1fr}
-      nav{display:none}
-      h1{font-size: 30px}
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <div class="logo">
-        <span class="dot"></span>
-        <span>Youth Fellowship</span>
-      </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-    <section class="hero">
-      <div class="card">
-        <div class="pill">✨ Built with HTML + CSS (no JS)</div>
-        <h1>Welcome to Youth Fellowship Night</h1>
-        <p class="subtitle">
-          A simple website you can build in 30 minutes — perfect for beginners.
-        </p>
+    html {
+      scroll-behavior: smooth;
+    }
 
-        <div class="btns">
-          <a class="btn primary" href="#schedule">View Schedule</a>
-          <a class="btn" href="#about">Learn More</a>
-        </div>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
 
-        <p class="verse">
-          “Let no one despise your youth, but be an example…” — 1 Timothy 4:12
-        </p>
-      </div>
+    .annotation {
+      position: relative;
+    }
 
-      <div class="card" id="schedule">
-        <h2 style="margin:0 0 8px;">Tonight’s Schedule</h2>
-        <div class="grid">
-          <div class="mini card" style="padding:14px;">
-            <h3>7:30 PM</h3><p>Ice Breaker</p>
-          </div>
-          <div class="mini card" style="padding:14px;">
-            <h3>8:00 PM</h3><p>Worship</p>
-          </div>
-          <div class="mini card" style="padding:14px;">
-            <h3>8:30 PM</h3><p>Sharing / Message</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="card" id="about" style="margin-top:14px;">
-      <h2 style="margin:0 0 8px;">About</h2>
-      <p style="margin:0; color: var(--muted);">
-        This page is a starter template. You can teach youths how to change text, colors,
-        spacing, and layout — and by the end they have their own landing page.
-      </p>
-    </section>
-
-    <section class="card" id="contact" style="margin-top:14px;">
-      <h2 style="margin:0 0 8px;">Contact</h2>
-      <p style="margin:0; color: var(--muted);">
-        Put your group leader contact here, or add a QR code later.
-      </p>
-    </section>
-
-    <footer>Made with ❤️ using HTML + CSS</footer>
-  </div>
-</body>
-</html>
+    .annotation::after {
+      content: attr(data-annotation);
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: #2563eb;
+      color: white;
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      white-space: nowrap;
